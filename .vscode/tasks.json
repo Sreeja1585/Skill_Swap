@@ -1,0 +1,209 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Check project health (npm install & audit)",
+			"type": "shell",
+			"command": "npm install && npm audit",
+			"group": "build"
+		},
+		{
+			"label": "Install npm dependencies",
+			"type": "shell",
+			"command": "npm install",
+			"group": "build"
+		},
+		{
+			"label": "Install client dependencies",
+			"type": "shell",
+			"command": "cd skillswap/client; npm install",
+			"group": "build"
+		},
+		{
+			"label": "Install server dependencies",
+			"type": "shell",
+			"command": "cd skillswap/server; npm install",
+			"group": "build"
+		},
+		{
+			"label": "Run client tests",
+			"type": "shell",
+			"command": "cd skillswap/client; npm test -- --watchAll=false",
+			"group": "test"
+		},
+		{
+			"label": "Run server tests",
+			"type": "shell",
+			"command": "cd skillswap/server; npm test -- --watchAll=false",
+			"group": "test"
+		},
+		{
+			"label": "Install react-router-dom in client",
+			"type": "shell",
+			"command": "cd skillswap/client; npm install react-router-dom",
+			"group": "build"
+		},
+		{
+			"label": "List server npm scripts",
+			"type": "shell",
+			"command": "cd skillswap/server; npm run",
+			"group": "build"
+		},
+		{
+			"label": "Re-run client tests after installing react-router-dom",
+			"type": "shell",
+			"command": "cd skillswap/client; npm test -- --watchAll=false",
+			"group": "test"
+		},
+		{
+			"label": "Install react-router-dom for tests",
+			"type": "shell",
+			"command": "cd skillswap/client; npm install --save-dev react-router-dom",
+			"group": "build"
+		},
+		{
+			"label": "Re-run client tests after dev install",
+			"type": "shell",
+			"command": "cd skillswap/client; npm test -- --watchAll=false",
+			"group": "test"
+		},
+		{
+			"label": "Remove node_modules and reinstall in client",
+			"type": "shell",
+			"command": "cd skillswap/client; rmdir /s /q node_modules; del package-lock.json; npm install",
+			"group": "build"
+		},
+		{
+			"label": "Remove node_modules and reinstall (PowerShell)",
+			"type": "shell",
+			"command": "cd skillswap/client; Remove-Item -Recurse -Force node_modules; Remove-Item -Force package-lock.json; npm install",
+			"group": "build"
+		},
+		{
+			"label": "Re-run client tests after clean install",
+			"type": "shell",
+			"command": "cd skillswap/client; npm test -- --watchAll=false",
+			"group": "test"
+		},
+		{
+			"label": "Install react-scripts in client",
+			"type": "shell",
+			"command": "cd skillswap/client; npm install react-scripts",
+			"group": "build"
+		},
+		{
+			"label": "Re-run client tests after installing react-scripts",
+			"type": "shell",
+			"command": "cd skillswap/client; npm test -- --watchAll=false",
+			"group": "test"
+		},
+		{
+			"label": "Force install react-router-dom in client",
+			"type": "shell",
+			"command": "cd skillswap/client; npm install react-router-dom --force",
+			"group": "build"
+		},
+		{
+			"label": "Re-run client tests after force installing react-router-dom",
+			"type": "shell",
+			"command": "cd skillswap/client; npm test -- --watchAll=false",
+			"group": "test"
+		},
+		{
+			"label": "Check react-router-dom install in client",
+			"type": "shell",
+			"command": "cd skillswap/client; npm ls react-router-dom",
+			"group": "build"
+		},
+		{
+			"label": "Check node_modules/react-router-dom existence",
+			"type": "shell",
+			"command": "cd skillswap/client; if (Test-Path node_modules/react-router-dom) { Write-Output 'Exists' } else { Write-Output 'Missing' }",
+			"group": "build"
+		},
+		{
+			"label": "Check react-router-dom main file",
+			"type": "shell",
+			"command": "cd skillswap/client; dir node_modules/react-router-dom",
+			"group": "build"
+		},
+		{
+			"label": "Check react-router-dom package.json for entry point",
+			"type": "shell",
+			"command": "cd skillswap/client; type node_modules/react-router-dom/package.json",
+			"group": "build"
+		},
+		{
+			"label": "Check Node.js version in client",
+			"type": "shell",
+			"command": "cd skillswap/client; node --version",
+			"group": "build"
+		},
+		{
+			"label": "Check react-router version in client",
+			"type": "shell",
+			"command": "cd skillswap/client; npm ls react-router",
+			"group": "build"
+		},
+		{
+			"label": "Check react version in client",
+			"type": "shell",
+			"command": "cd skillswap/client; npm ls react",
+			"group": "build"
+		},
+		{
+			"label": "Check react-router-dom dist directory",
+			"type": "shell",
+			"command": "cd skillswap/client; dir node_modules/react-router-dom/dist",
+			"group": "build"
+		},
+		{
+			"label": "Check permissions on react-router-dom dist files",
+			"type": "shell",
+			"command": "cd skillswap/client; Get-Acl node_modules/react-router-dom/dist/index.js",
+			"group": "build"
+		},
+		{
+			"label": "Check if App.js can import react-router-dom manually",
+			"type": "shell",
+			"command": "cd skillswap/client; node -e \"require('./src/App.js')\"",
+			"group": "build"
+		},
+		{
+			"label": "Clear Jest cache and rerun client tests",
+			"type": "shell",
+			"command": "cd skillswap/client; npx jest --clearCache; npm test -- --watchAll=false",
+			"group": "test"
+		},
+		{
+			"label": "Reinstall client dependencies after moving react-router-dom",
+			"type": "shell",
+			"command": "cd skillswap/client; npm install",
+			"group": "build"
+		},
+		{
+			"label": "Re-run client tests after fixing dependencies",
+			"type": "shell",
+			"command": "cd skillswap/client; npm test -- --watchAll=false",
+			"group": "test"
+		},
+		{
+			"label": "Uninstall invalid react-router-dom and install latest stable",
+			"type": "shell",
+			"command": "cd skillswap/client; npm uninstall react-router-dom; npm install react-router-dom@latest",
+			"group": "build"
+		},
+		{
+			"label": "Re-run client tests after installing stable react-router-dom",
+			"type": "shell",
+			"command": "cd skillswap/client; npm test -- --watchAll=false",
+			"group": "test"
+		},
+		{
+			"label": "Remove node_modules and package-lock.json, reinstall clean (client)",
+			"type": "shell",
+			"command": "cd skillswap/client; Remove-Item -Recurse -Force node_modules; Remove-Item -Force package-lock.json; npm install",
+			"group": "build"
+		}
+	]
+}
